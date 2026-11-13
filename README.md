@@ -19,7 +19,7 @@ Vigila la caducidad de tus dominios gratuitos de [DigitalPlat](https://domain.di
 
 > Proyecto de la comunidad, sin relación oficial con DigitalPlat.
 
-[!\[Abrir en HACS](https://my.home-assistant.io/badges/hacs\_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=TU_USUARIO_GITHUB&repository=digitalplat-renew-ha&category=integration)
+[!\[Abrir en HACS](https://my.home-assistant.io/badges/hacs\_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=barnynv&repository=digitalplat-renew-ha&category=integration)
 
 \---
 
