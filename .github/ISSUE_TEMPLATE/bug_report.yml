@@ -1,0 +1,41 @@
+name: Error
+description: Algo no funciona como debería
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ⚠️ **No pegues nunca tu clave API** (`dp_live_...`). Si lo haces por error, revócala en DigitalPlat.
+  - type: input
+    id: ha_version
+    attributes:
+      label: Versión de Home Assistant
+      placeholder: "2026.11.1"
+    validations:
+      required: true
+  - type: input
+    id: integration_version
+    attributes:
+      label: Versión de la integración
+      placeholder: "1.0.0"
+    validations:
+      required: true
+  - type: input
+    id: suffix
+    attributes:
+      label: Sufijo del dominio
+      description: Solo el sufijo, no hace falta el dominio completo.
+      placeholder: ".dpdns.org"
+  - type: textarea
+    id: description
+    attributes:
+      label: Qué ha pasado
+      description: Qué hiciste, qué esperabas y qué ocurrió.
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Registros
+      description: Líneas de Ajustes → Sistema → Registros que contengan "digitalplat".
+      render: text
