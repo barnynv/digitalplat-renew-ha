@@ -1,0 +1,16 @@
+{
+  "entity": {
+    "sensor": {
+      "expires": { "default": "mdi:calendar-end" },
+      "days_left": { "default": "mdi:timer-sand" },
+      "window_opens": { "default": "mdi:calendar-start" },
+      "status": { "default": "mdi:web-check" }
+    },
+    "binary_sensor": {
+      "renewal_available": { "default": "mdi:autorenew-off", "state": { "on": "mdi:autorenew" } }
+    },
+    "button": {
+      "renew": { "default": "mdi:refresh-circle" }
+    }
+  }
+}

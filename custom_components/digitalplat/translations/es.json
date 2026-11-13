@@ -1,0 +1,90 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Conecta tu cuenta de DigitalPlat",
+        "description": "Crea una clave en [DigitalPlat → API Keys]({api_keys_url}) y pégala aquí. Empieza por `dp_live_` y solo se muestra una vez.",
+        "data": { "api_key": "Clave API" },
+        "data_description": { "api_key": "Se guarda solo en tu Home Assistant. Sirve para leer tus dominios y, cuando pulses Renovar, renovarlos." }
+      },
+      "domains": {
+        "title": "Elige tus dominios",
+        "description": "Marca los dominios que quieres vigilar desde Home Assistant.",
+        "data": {
+          "domains": "Dominios",
+          "window_days": "Plazo de renovación gratuita",
+          "scan_interval_hours": "Frecuencia de actualización"
+        },
+        "data_description": {
+          "window_days": "Días antes de la caducidad en que se abre la renovación gratuita (ahora DigitalPlat indica 120).",
+          "scan_interval_hours": "Cada cuántas horas se consulta DigitalPlat."
+        }
+      },
+      "reauth_confirm": {
+        "title": "La clave API ya no es válida",
+        "description": "Crea una clave nueva de la misma cuenta en [DigitalPlat → API Keys]({api_keys_url}).",
+        "data": { "api_key": "Nueva clave API" }
+      },
+      "reconfigure": {
+        "title": "Cambiar clave API",
+        "description": "Sustituye la clave por otra de la misma cuenta de DigitalPlat ([API Keys]({api_keys_url})).",
+        "data": { "api_key": "Nueva clave API" }
+      }
+    },
+    "error": {
+      "invalid_key_format": "La clave debe empezar por dp_live_ o dp_test_",
+      "invalid_auth": "Clave API no válida o revocada",
+      "cannot_connect": "No se pudo contactar con DigitalPlat. Inténtalo más tarde",
+      "no_domains": "Esta cuenta no tiene dominios",
+      "select_domain": "Selecciona al menos un dominio",
+      "wrong_account": "Esta clave es de otra cuenta distinta a la de los dominios vigilados",
+      "unknown": "Error inesperado de DigitalPlat"
+    },
+    "abort": {
+      "already_configured": "Esta cuenta de DigitalPlat ya está configurada",
+      "reauth_successful": "Clave API actualizada",
+      "reconfigure_successful": "Clave API actualizada"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opciones de DigitalPlat",
+        "data": {
+          "domains": "Dominios",
+          "window_days": "Plazo de renovación gratuita",
+          "scan_interval_hours": "Frecuencia de actualización"
+        },
+        "data_description": {
+          "window_days": "Días antes de la caducidad en que se abre la renovación gratuita.",
+          "scan_interval_hours": "Cada cuántas horas se consulta DigitalPlat."
+        }
+      }
+    },
+    "error": {
+      "select_domain": "Selecciona al menos un dominio",
+      "invalid_key_format": "La clave guardada no tiene un formato válido. Usa Reconfigurar",
+      "invalid_auth": "La clave API ya no es válida. Usa Reconfigurar",
+      "cannot_connect": "No se pudo contactar con DigitalPlat. La lista de dominios puede estar incompleta",
+      "unknown": "Error inesperado de DigitalPlat"
+    }
+  },
+  "entity": {
+    "sensor": {
+      "expires": { "name": "Fecha de expiración" },
+      "days_left": { "name": "Días restantes" },
+      "window_opens": { "name": "Apertura de renovación" },
+      "status": { "name": "Estado" }
+    },
+    "binary_sensor": {
+      "renewal_available": { "name": "Renovación disponible" }
+    },
+    "button": {
+      "renew": { "name": "Renovar" }
+    }
+  },
+  "exceptions": {
+    "renewal_not_available": { "message": "La renovación gratuita de {domain} todavía no está disponible." },
+    "renewal_failed": { "message": "DigitalPlat rechazó la renovación de {domain}: {error}. Revisa el panel antes de volver a intentarlo." }
+  }
+}

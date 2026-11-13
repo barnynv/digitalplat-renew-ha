@@ -1,0 +1,23 @@
+# Tarjeta de ejemplo para un dominio.
+# Sustituye "midominio_dpdns_org" por el tuyo (puntos y guiones → "_").
+# Puedes ver los entity_id exactos en Ajustes → Dispositivos → <tu dominio>.
+type: vertical-stack
+cards:
+  - type: entities
+    title: midominio.dpdns.org
+    entities:
+      - entity: sensor.midominio_dpdns_org_expiration_date
+      - entity: sensor.midominio_dpdns_org_days_left
+      - entity: sensor.midominio_dpdns_org_renewal_opens
+      - entity: binary_sensor.midominio_dpdns_org_renewal_available
+  - type: button
+    entity: button.midominio_dpdns_org_renew
+    name: Renovar dominio
+    show_state: false
+    tap_action:
+      action: perform-action
+      perform_action: button.press
+      target:
+        entity_id: button.midominio_dpdns_org_renew
+      confirmation:
+        text: "¿Renovar el dominio ahora?"

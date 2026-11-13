@@ -1,0 +1,90 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect your DigitalPlat account",
+        "description": "Create an API key at [DigitalPlat → API Keys]({api_keys_url}) and paste it here. It starts with `dp_live_` and is shown only once.",
+        "data": { "api_key": "API key" },
+        "data_description": { "api_key": "Stored only in your Home Assistant. Used to read your domains and, when you press Renew, to renew them." }
+      },
+      "domains": {
+        "title": "Choose your domains",
+        "description": "Select the domains Home Assistant should track.",
+        "data": {
+          "domains": "Domains",
+          "window_days": "Free renewal window",
+          "scan_interval_hours": "Update interval"
+        },
+        "data_description": {
+          "window_days": "Days before expiration when free renewal opens (DigitalPlat currently shows 120).",
+          "scan_interval_hours": "How often to check DigitalPlat."
+        }
+      },
+      "reauth_confirm": {
+        "title": "API key no longer valid",
+        "description": "Create a new key at [DigitalPlat → API Keys]({api_keys_url}) for the same account.",
+        "data": { "api_key": "New API key" }
+      },
+      "reconfigure": {
+        "title": "Change API key",
+        "description": "Replace the key with another one from the same DigitalPlat account ([API Keys]({api_keys_url})).",
+        "data": { "api_key": "New API key" }
+      }
+    },
+    "error": {
+      "invalid_key_format": "The key must start with dp_live_ or dp_test_",
+      "invalid_auth": "Invalid or revoked API key",
+      "cannot_connect": "Could not reach DigitalPlat. Try again later",
+      "no_domains": "This account has no domains",
+      "select_domain": "Select at least one domain",
+      "wrong_account": "This key belongs to a different account than the tracked domains",
+      "unknown": "Unexpected error from DigitalPlat"
+    },
+    "abort": {
+      "already_configured": "This DigitalPlat account is already configured",
+      "reauth_successful": "API key updated",
+      "reconfigure_successful": "API key updated"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "DigitalPlat options",
+        "data": {
+          "domains": "Domains",
+          "window_days": "Free renewal window",
+          "scan_interval_hours": "Update interval"
+        },
+        "data_description": {
+          "window_days": "Days before expiration when free renewal opens.",
+          "scan_interval_hours": "How often to check DigitalPlat."
+        }
+      }
+    },
+    "error": {
+      "select_domain": "Select at least one domain",
+      "invalid_key_format": "The stored key has an invalid format. Use Reconfigure",
+      "invalid_auth": "The API key is no longer valid. Use Reconfigure",
+      "cannot_connect": "Could not reach DigitalPlat. The domain list may be incomplete",
+      "unknown": "Unexpected error from DigitalPlat"
+    }
+  },
+  "entity": {
+    "sensor": {
+      "expires": { "name": "Expiration date" },
+      "days_left": { "name": "Days left" },
+      "window_opens": { "name": "Renewal opens" },
+      "status": { "name": "Status" }
+    },
+    "binary_sensor": {
+      "renewal_available": { "name": "Renewal available" }
+    },
+    "button": {
+      "renew": { "name": "Renew" }
+    }
+  },
+  "exceptions": {
+    "renewal_not_available": { "message": "Free renewal is not available yet for {domain}." },
+    "renewal_failed": { "message": "DigitalPlat rejected the renewal of {domain}: {error}. Check the dashboard before trying again." }
+  }
+}

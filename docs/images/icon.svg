@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+<circle cx="128" cy="128" r="126" fill="#41BDF5"/>
+<g fill="none" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round">
+<path d="M37.8 95.2 A96 96 0 0 1 211.1 80.0"/><path d="M218.2 160.8 A96 96 0 0 1 44.9 176.0"/></g>
+<g fill="#FFFFFF"><path d="M221.5 106.4 L223.1 70.8 L197.4 86.3 Z"/><path d="M34.5 149.6 L32.9 185.2 L58.6 169.7 Z"/></g>
+<text x="128" y="128" dy="0.35em" text-anchor="middle" font-family="Inter" font-weight="800"
+ font-size="92" letter-spacing="-4" fill="#FFFFFF">DR</text>
+</svg>

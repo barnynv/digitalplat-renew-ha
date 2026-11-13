@@ -1,0 +1,13 @@
+{
+  "domain": "digitalplat",
+  "name": "DigitalPlat Renew HA",
+  "codeowners": ["@TU_USUARIO_GITHUB"],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://github.com/barnynv/digitalplat-renew-ha",
+  "integration_type": "hub",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/barnynv/digitalplat-renew-ha/issues",
+  "requirements": [],
+  "version": "1.0.0"
+}

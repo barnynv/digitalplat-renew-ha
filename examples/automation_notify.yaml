@@ -1,0 +1,18 @@
+# Aviso al móvil cuando se abre la renovación gratuita.
+# 1) Añade en entity_id los sensores "Renovación disponible" de tus dominios.
+# 2) Cambia notify.mobile_app_tu_movil por tu servicio de notificación.
+alias: "DigitalPlat: dominio listo para renovar"
+mode: queued
+triggers:
+  - trigger: state
+    entity_id:
+      - binary_sensor.midominio_dpdns_org_renewal_available
+    from: "off"
+    to: "on"
+actions:
+  - action: notify.mobile_app_tu_movil
+    data:
+      title: "Dominio listo para renovar"
+      message: >
+        {{ device_attr(device_id(trigger.entity_id), 'name') }}
+        ya se puede renovar gratis desde Home Assistant.
