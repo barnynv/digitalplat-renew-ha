@@ -1,0 +1,14 @@
+name: Propuesta de mejora
+description: Sugiere una función nueva
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: Qué te gustaría
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Para qué lo usarías
