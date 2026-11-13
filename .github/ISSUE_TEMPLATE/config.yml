@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Documentación de la API de DigitalPlat
+    url: https://dashboard.digitalplat.org/dashboard/api/docs
+    about: Para dudas sobre la API o tu cuenta, consulta DigitalPlat directamente.
