@@ -1,7 +1,7 @@
 {
   "domain": "digitalplat",
   "name": "DigitalPlat Renew HA",
-  "codeowners": ["@TU_USUARIO_GITHUB"],
+  "codeowners": ["@Barnynv"],
   "config_flow": true,
   "dependencies": [],
   "documentation": "https://github.com/barnynv/digitalplat-renew-ha",
